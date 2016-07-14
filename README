@@ -1,0 +1,27 @@
+About:
+
+Simple Get ID REST call on http://jsonplaceholder.typicode.com/. There is no user interface to this application.
+
+The main function creates three threads.
+
+The Publisher thread is the background thread which if gets a requestID makes a call to jsonplaceholder for the ID and gets the response in a string.
+
+The Observer thread is the one which fires a request to the Publisher thread and waits for the response in its response queue. There are two Observer threads in this application.
+
+Requirements:
+
+OS : MAC OS X
+Tools: 
+1. git, make, g++, poco library installation
+2. You can build and install the poco library from source from here : http://pocoproject.org/download/index.html
+3. At the time of writing this, poco-1.7.3 was used. The basic edition is good enough. Complete edition is not required for this application.
+
+Follow steps below to compile and run the app:
+
+ 1. Make sure the Poco include files are in /usr/local/include and the Poco libraries are in /usr/local/lib. If this is not the case, you will have to modify the Makefile to compile the program.
+ 2. Go to any directory you want the source code to be downloaded
+ 3. type 'git clone https://github.com/musicophilic/ObserverPatternPocoDemo'
+ 4. cd ObserverPatternPocoDemo
+ 5. make clobber clean
+ 6. make
+ 7. run the application by ./dist/Debug/GNU-MacOSX/observerpatternpocodemo
